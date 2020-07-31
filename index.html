@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <title>WebGL Test</title>
+  </head>
+  <body>
+    <canvas id="glCanvas" width="640" height="480"></canvas>
+    <p></p>
+    <button id="circleButton">Add Circles</button>
+    <button id="shakeButton">Shake!</button>
+    <button id="clearButton">Clear!</button>
+    <label for="radiusSlider">Radius: </label>
+    <input
+      type="range"
+      min="10"
+      max="100"
+      value="25"
+      class="slider"
+      id="radiusSlider"
+      oninput="setRadius(this.value)"
+      onchange="setRadius(this.value)"
+    />
+
+    <p id="notice">Click and drag circles to throw them!</p>
+    <script src="helper.js"></script>
+    <script src="./entities/Circle.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
