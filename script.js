@@ -23,8 +23,8 @@ const fps = 60
 
 // physics
 const g = 1
-const wall_loss = 0.95
-const ball_loss = 0.999
+const wall_loss = 0.98
+const ball_loss = 0.99
 
 //Circle Properties
 let circRadius = 25
@@ -293,7 +293,7 @@ const render = () => {
       circle.velocity[0] = ((dx < 0 ? 1 : -1) * (Math.cos(angle) * tot_v)) / 2
       circle.velocity[1] = ((dx < 0 ? 1 : -1) * (Math.sin(angle) * tot_v)) / 2
 
-      circle.loss = circle.loss * ball_loss
+      circle.loss = Math.max(circle.loss, circle2.loss * ball_loss)
     }
   }
   for (const circle of circles) {
